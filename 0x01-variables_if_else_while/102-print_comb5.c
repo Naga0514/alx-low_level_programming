@@ -27,7 +27,7 @@ putchar('\n');
 else 
 {
 putchar(',');
-putchar(',');
+putchar(' ');
 }
 b++;
 }
