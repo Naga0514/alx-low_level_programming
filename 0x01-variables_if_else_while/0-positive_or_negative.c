@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
 /**
  * main - Determine if a random number is positive, negative or zero.
 (* 
@@ -27,4 +26,5 @@
 		 printf("%d is %s\n", n, "zero");
 	 }
 	 return (0);
+
 }
