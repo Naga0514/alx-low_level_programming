@@ -2,7 +2,7 @@
 /**
  * main - entry block
  * @void: no argument
- * @void: no argument
+ * Return: 0:wq
 **/
 int main(void)
 {
