@@ -24,7 +24,7 @@ putchar(b);
 putchar(c);
 if (a == '7' && b == '8' && c == '9')
 {
-putchar('\n'); 
+putchar('\n');
 }
 else
 {
