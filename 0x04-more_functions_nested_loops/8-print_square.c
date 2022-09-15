@@ -4,7 +4,7 @@
  * print_square - entry point
  *
  * Description: Prints square
- * @size: size of square
+ *@size: size of square
  * Return: void
  */
 
