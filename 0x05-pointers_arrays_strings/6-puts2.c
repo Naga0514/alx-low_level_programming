@@ -1,10 +1,10 @@
 #include "main.h"
 #include <string.h>
-/**
- * puts2 -> puts2 function
- * @str: string characters
- */
 
+/**
+* puts2 -> puts2 function
+* @str: string characters
+*/
 void puts2(char *str)
 {
 	int len, i;
