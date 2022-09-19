@@ -3,7 +3,7 @@
 
 /**
 * puts2 -> puts2 function
-* @str: string characters
+* @str: str parameter
 */
 void puts2(char *str)
 {
