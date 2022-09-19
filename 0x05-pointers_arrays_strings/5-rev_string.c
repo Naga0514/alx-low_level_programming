@@ -1,17 +1,21 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code for ALX School students.
- *
- * Return: Always 0.
+ * rev_string - this reserve a string
+ * @s: pointer
  */
-int main(void)
+void rev_string(char *s)
 {
-	char s[10] = "ALX";
+	int len = 0, index = 0;
+	char tmp;
 
-	printf("%s\n", s);
-	rev_string(s);
-	 printf("%s\n", s);
-	 return (0);
+	while (s[index++])
+		len++;
+
+	for (index = len - 1; index >= len / 2; index--)
+	{
+		tmp = s[index];
+		s[index] = s[len - index - 1];
+		s[len - index - 1] = tmp;
+	}
 }
