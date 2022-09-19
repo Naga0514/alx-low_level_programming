@@ -6,7 +6,7 @@
  * @str: string parameter input
  *
  * Return: Noting
- */
+*/
 
 void puts2(char *str)
 {
