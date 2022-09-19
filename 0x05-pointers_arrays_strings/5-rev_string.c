@@ -5,6 +5,7 @@
  *
  * @s: this is the pointer that point to a string
  */
+
 void rev_string(char *s)
 {
 	int a, len;
