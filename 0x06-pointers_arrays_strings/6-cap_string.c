@@ -1,35 +1,39 @@
 #include "main.h"
 
 /**
- * cap_string - Write a function that capitalizes all words of a string.
- *
- * @entry: This is the input string
- *
- * Return: String capitalized
+ * cap_string - capitalize all words of a string
+ * @str: string
+ * Return: `str`
  */
-char *cap_string(char *entry)
+
+char *cap_string(char *str)
 {
-	int conversion, index, count;
+	int i, c;
+	int trigger;
+	char nots[] = ",;.!?(){}\n\t\" ";
 
-	char chars[] = {' ', ',', ';', '.', '!',
-			 '?', '"', '(', ')', '{', '}',  '\t', '\n', '\0'};
-	conversion = 32;
-
-	for (index = 0; entry[index] != '\0'; index++)
+	for (i = 0, trigger = 0; str[i] != '\0'; i++)
 	{
-		if (entry[index] >= 'index' && entry[index] <= 'z')
+		if (str[0] > 96 && str[0] < 123)
+			trigger = 1;
+		for (c = 0; nots[c] != '\0'; c++)
 		{
-			entry[index] =  entry[index] - conversion;
+			if (nots[c] == str[i])
+				trigger = 1;
 		}
-		conversion = 0;
-		for (count = 0; chars[count] != '\0'; count++)
+
+		if (trigger)
 		{
-			if (chars[count] == entry[index])
+			if (str[i] > 96 && str[i] < 123)
 			{
-				conversion = 32;
-				break;
+				str[i] -= 32;
+				trigger = 0;
 			}
+			else if (str[i] > 64 && str[i] < 91)
+				trigger = 0;
+			else if (str[i] > 47 && str[i] < 58)
+				trigger = 0;
 		}
 	}
-	return (entry);
+	return (str);
 }
