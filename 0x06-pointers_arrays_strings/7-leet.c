@@ -1,29 +1,28 @@
 #include "main.h"
 
 /**
- * leet - Write a function that encodes a string into 1337
- *
- * @changed: This is the input string
- *
- * Return: String converted to 1337
+ * leet - encode a string into 1337
+ * @s: string
+ * Return: encoded string `s`
  */
 
-char *leet(char *changed)
+char *leet(char *s)
 {
-	int index, j;
-	char minus[] = {'a', 'e', 'o', 't', 'l', '\0'};
-	char mayus[] = {'A', 'E', 'O', 'T', 'L', '\0'};
-	char numbers[] = {'4', '3', '0', '7', '1', '\0'};
+	int i;
 
-	for (index = 0; changed[index] != '\0'; ++index)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j < 5; j++)
-		{
-			if (changed[index] == minus[j] || changed[index] == mayus[j])
-			{
-				changed[index] = numbers[j];
-			}
-		}
+		while (s[i] == 'a' || s[i] == 'A')
+			s[i] = '4';
+		while (s[i] == 'e' || s[i] == 'E')
+			s[i] = '3';
+		while (s[i] == 'o' || s[i] == 'O')
+			s[i] = '0';
+		while (s[i] == 't' || s[i] == 'T')
+			s[i] = '7';
+		while (s[i] == 'l' || s[i] == 'L')
+			s[i] = '1';
 	}
-	return (changed);
+
+	return (s);
 }
