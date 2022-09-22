@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  *_strncat- append string
  *@dest: checked
@@ -7,6 +6,7 @@
  *@n: checked
  *Return: dest
  */
+
 char *_strncat(char *dest, char *src, int n)
 {
 	int i, j;
