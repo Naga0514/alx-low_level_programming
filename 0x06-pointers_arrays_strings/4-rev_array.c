@@ -2,7 +2,7 @@
 /**
  *reverse_array- prints in reverse
  *
- *@a: an array of intege
+ *@a: an array of integers
  *@n: the number of elements to swap
  *Return: nothing
  */
