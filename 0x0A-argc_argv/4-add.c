@@ -9,7 +9,7 @@
  * Return: always 0
  **/
 
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
 	int i, suma = 0, res = 0;
 	char c[] = "Error", *find_letter;
