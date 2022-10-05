@@ -6,12 +6,12 @@
 int _strlen(const char *s);
 
 /**
- * str_concat - concatenate two string
- * @s1: pointer to first string
- * @s2: pointer to second string
- *
- * Return: pointer to the concatenated string
- */
+* str_concat - concatenate two string
+* @s1: pointer to first string
+* @s2: pointer to second string
+*
+* Return: pointer to the concatenated string
+*/
 
 char *str_concat(char *s1, char *s2)
 {
@@ -35,10 +35,10 @@ char *str_concat(char *s1, char *s2)
 	return (output);
 }
 /**
- * _strlen - get  the length of the string s
- * @s: pointer to the string whose length is required
- * Return: length of the string
- */
+* _strlen - get  the length of the string s
+* @s: pointer to the string whose length is required
+* Return: length of the string
+*/
 int _strlen(const char *s)
 {
 	int i = 0;
