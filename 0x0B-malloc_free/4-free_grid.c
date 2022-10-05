@@ -1,18 +1,19 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
-* free_grid - free memory dynamically allocated
-* @grid: pointer to 2-D array
-* @row: row of the array
-*/
-
-void free_grid(int **grid, int row)
+ * free_grid - frees a 2 dimensional grid.
+ * @grid: multidimensional array of integers.
+ * @height: height of the grid.
+ *
+ * Return: no return
+ */
+void free_grid(int **grid, int height)
 {
-	int i;
-
-	for (i = 0; i < row; i++)
-		free(grid[i]);
-	free(grid);
+	if (grid != NULL && height != 0)
+	{
+		for (; height >= 0; height--)
+			free(grid[height]);
+		free(grid);
+	}
 }
