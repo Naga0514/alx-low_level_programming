@@ -1,49 +1,41 @@
-#include <string.h>
+#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
-
-int _strlen(const char *s);
 
 /**
-* str_concat - concatenate two string
-* @s1: pointer to first string
-* @s2: pointer to second string
-*
-* Return: pointer to the concatenated string
-*/
-
+ * str_concat - Entry point
+ *@s1: string 1
+ *@s2: string 2
+ * Return: pointer should point to a newly allocated space in memory or NULL
+ */
 char *str_concat(char *s1, char *s2)
 {
-	int i = 0, j = 0;
-	char *output;
+	char *strnew = NULL;
+	unsigned int i;
+	int n1;
+	int n2;
+	int count;
 
+	count = 0;
 	if (s1 == NULL)
-		s1 = "\0";
+		s1 = "";
 	if (s2 == NULL)
-		s2 = "\0";
-	i = _strlen(s1);
-	j = _strlen(s2);
-
-	output = malloc((i + j) * sizeof(*s1) + 1);
-
-	if (output == 0)
-		return (NULL);
-	strcat(output, s1);
-	strcat(output, s2);
-
-	return (output);
-}
-/**
-* _strlen - get  the length of the string s
-* @s: pointer to the string whose length is required
-* Return: length of the string
-*/
-int _strlen(const char *s)
-{
-	int i = 0;
-
-	for (; s[i] != '\0'; i++)
+		s2 = "";
+	for (n1 = 0; s1[n1] != '\0'; n1++)
 		;
-	return (i);
+	for (n2 = 0; s2[n2] != '\0'; n2++)
+		;
+	strnew = (char *)malloc((n1 + n2 + 1) * sizeof(char));
+	if (strnew == NULL)
+	{
+		return (NULL);
+	}
+	for (i = 0; s1[i] != '\0'; i++)
+		strnew[i] = s1[i];
+	for (; s2[count] != '\0'; i++)
+	{
+		strnew[i] = s2[count];
+		count++;
+	}
+	return (strnew);
 }
