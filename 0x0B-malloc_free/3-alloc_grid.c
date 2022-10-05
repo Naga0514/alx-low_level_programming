@@ -1,37 +1,47 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
-* alloc_grid - make a 2-D array dynamically
-* @col: column of the array
-* @row: row of the array
-*
-* Return: pointer to the 2-D array
-*/
+ *alloc_grid - returns a pointer.
+ *@width: width oàf array
+ *@height: height of array
+ *Return: pointer to the array
+ */
 
-int **alloc_grid(int col, int row)
+int **alloc_grid(int width, int height)
 {
-	int i, j,  **grid;
+	int **array;
+	int i = 0, j;
 
-	grid = malloc(row * sizeof(*grid));
-
-	if (row < 1 || col < 1 || grid == 0)
+	if (width == 0 || height == 0)
 		return (NULL);
 
-	for (i = 0; i < row; i++)
-	{
-		grid[i] = malloc(col * sizeof(**grid));
-		if (grid[i] == 0)
-		{
-			while (i--)
-				free(grid[i]);
-			free(grid);
-			return (NULL);
-		}
-		for (j = 0; j < col; j++)
-			grid[i][j] = 0;
-	}
+	array = (int **) malloc(sizeof(int *) * height);
 
-	return (grid);
+	if (array != NULL)
+	{
+		for (; i < height; i++)
+		{
+			array[i] = (int *) malloc(sizeof(int) * width);
+			if (array[i] != NULL)
+			{
+				for (j = 0; j < width; j++)
+					array[i][j] = 0;
+			}
+			else
+			{
+				while (i >= 0)
+				{
+					free(array[i]);
+					i--;
+				}
+				free(array);
+				return (NULL);
+			}
+		}
+		return (array);
+	}
+	else
+	{
+		return (NULL);
+	}
 }
